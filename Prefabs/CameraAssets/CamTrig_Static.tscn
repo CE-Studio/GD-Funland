@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb734pldq0g30"]
+
+[ext_resource type="Script" path="res://Scripts/Camera/CamTrigStatic.gd" id="1_ak48w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kmn06"]
+
+[node name="Camera Trigger (Static)" type="Node3D"]
+script = ExtResource("1_ak48w")
+
+[node name="Trigger" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger"]
+shape = SubResource("BoxShape3D_kmn06")
+
+[node name="Target" type="Marker3D" parent="."]
+gizmo_extents = 0.13
