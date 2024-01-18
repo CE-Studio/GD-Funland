@@ -29,7 +29,7 @@ func _physics_process(delta):
         direction = Vector3.ZERO
     var new_dir = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
     if new_dir:
-        new_dir.rotated(Vector3(0, 1, 0), deg_to_rad(cam.rotation.y))
+        new_dir = new_dir.rotated(Vector3(0, 1, 0), cam.rotation.y)
         direction = Vector3(lerpf(direction.x, new_dir.x, TURN_ACCEL * delta), 0, lerpf(direction.z, new_dir.z, TURN_ACCEL * delta))
     velocity.x = direction.x * speed
     velocity.z = direction.z * speed
